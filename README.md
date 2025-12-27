@@ -323,7 +323,7 @@ After processing a poultry CCTV video using the system, the following outputs ar
 The following image shows a sample annotated frame from the video, illustrating the bird detection results produced by the model.  
 Detected birds are highlighted using bounding boxes, demonstrating the effectiveness of the detection and counting process.
 
-![Bird Detection Output]()
+![Bird Detection Output](https://github.com/pavs123-gt/Bird-counting-weight-estimation/blob/main/bird_detection.png)
 
 ## Sample Output Video
 
