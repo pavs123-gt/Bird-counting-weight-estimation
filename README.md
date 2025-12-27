@@ -380,3 +380,50 @@ After processing a poultry CCTV video using the system, the following outputs ar
 - These outputs together demonstrate the **full end-to-end functionality** of detection, tracking, counting, and weight estimation.  
 - All files are saved in the `outputs/` folder automatically after the `/analyze_video` API is called.
 
+---
+## Weight Estimation Notes
+
+The weight estimation in this project is implemented as a **relative weight index**, derived from the **area of the bounding boxes** detected around each bird.
+
+- **Methodology**:
+  - For each detected bird, the bounding box area is calculated: `(width × height)`.
+  - The area is normalized or scaled to produce a **weight index**.
+  - This index is stored per frame in the JSON output.
+
+- **Assumptions**:
+  - Camera angle and height are fixed.
+  - Birds are roughly uniform in shape.
+  - True weight in grams is **not provided** in the dataset.
+
+- **Conversion to grams**:
+  - Requires **camera calibration** and a set of known bird weights.
+  - A linear or regression-based mapping can convert the relative index to actual grams.
+
+- **Usage**:
+  - Provides a **proxy for weight trends over time**.
+  - Useful for monitoring flock growth or detecting abnormalities in bird size distribution.
+
+---
+## Tools Used
+
+The following tools and libraries were used to implement the Bird Counting and Weight Estimation system:
+
+- **Python 3.10+** – Primary programming language for the project.
+- **FastAPI** – To create the REST API for video analysis.
+- **Uvicorn** – ASGI server to run the FastAPI application.
+- **Ultralytics YOLOv8** – Pretrained object detection model for bird detection.
+- **ByteTrack** – Tracking algorithm to assign stable IDs to detected birds.
+- **OpenCV (cv2)** – Video reading, writing, and annotation.
+- **NumPy** – Numerical computations and array operations.
+- **Pathlib** – File and folder path management.
+- **UUID** – Unique identifiers for temporary files and outputs.
+- **JSON** – Structured output serialization for counts, tracks, and weight estimates.
+---
+## Author
+
+**Pavani Linguberi**  
+
+- Role: Candidate – Machine Learning / AI Engineer Internship  
+- Email: [linguberipavani3@gmail.com]  
+- GitHub: [https://github.com/your-username](https://github.com/pavs123-gt)  
+
