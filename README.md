@@ -263,6 +263,12 @@ After processing a poultry CCTV video using the system, the following outputs ar
 - Filename: `annotated_<unique_id>.avi`  
 - Description: The input video with bounding boxes drawn around detected birds, tracking IDs displayed, and total bird count overlaid on each frame.  
 - Purpose: Provides visual confirmation of detection, tracking, and counting performance.
+  
+Due to large file size, the annotated video is hosted on Google Drive.
+
+🔗 **Download Link:**  
+https://drive.google.com/file/d/1R1Byn37eS-YrnmQwJqkK-UXAfMkmpCTM/view?usp=sharing
+
 
 
 
@@ -325,12 +331,6 @@ Detected birds are highlighted using bounding boxes, demonstrating the effective
 
 ![Bird Detection Output](https://github.com/pavs123-gt/Bird-counting-weight-estimation/blob/main/bird_detection.png)
 
-## Annotated Output Video
-
-Due to large file size, the annotated video is hosted on Google Drive.
-
-🔗 **Download Link:**  
-https://drive.google.com/file/d/1R1Byn37eS-YrnmQwJqkK-UXAfMkmpCTM/view?usp=sharing
 
 
 ###  Output Artifacts
