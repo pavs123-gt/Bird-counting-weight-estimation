@@ -303,4 +303,80 @@ The API returns a JSON response containing the following fields:
 
 All generated artifacts are automatically saved in the `outputs/` directory after video processing is completed.
 
+---
+## Outputs
+
+After processing a poultry CCTV video using the system, the following outputs are generated in the `outputs/` directory:
+
+---
+
+### 1. Annotated Video
+
+- Filename: `annotated_<unique_id>.avi`  
+- Description: The input video with bounding boxes drawn around detected birds, tracking IDs displayed, and total bird count overlaid on each frame.  
+- Purpose: Provides visual confirmation of detection, tracking, and counting performance.
+
+---
+
+### 2. JSON Response File
+
+- Filename: `results_<unique_id>.json`  
+- Description: Contains structured data representing bird counts, sample tracking information, and weight estimation for each bird detected.  
+- Purpose: Provides machine-readable output suitable for further analysis or integration with other systems.
+
+**Sample JSON Content**
+
+```json
+{
+  "counts": [
+    {
+      "timestamp": 0.0,
+      "count": 12
+    },
+    {
+      "timestamp": 1.0,
+      "count": 14
+    }
+  ],
+  "tracks_sample": {
+    "3": {
+      "bbox": [120, 85, 260, 210],
+      "confidence": 0.87
+    },
+    "5": {
+      "bbox": [300, 120, 380, 250],
+      "confidence": 0.92
+    }
+  },
+  "weight_estimates": {
+    "unit": "index",
+    "method": "bounding_box_area_proxy",
+    "data": [
+      {
+        "id": 3,
+        "frame": 0,
+        "weight_index": 34.5
+      },
+      {
+        "id": 5,
+        "frame": 0,
+        "weight_index": 28.7
+      }
+    ]
+  },
+  "artifacts": {
+    "annotated_video": "annotated_<unique_id>.avi",
+    "json": "results_<unique_id>.json"
+  }
+}
+```
+
+---
+
+### Notes on Outputs
+
+- Only one annotated demo video is required for submission.  
+- JSON provides **all counts, tracking IDs, and weight proxies** in a structured format.  
+- These outputs together demonstrate the **full end-to-end functionality** of detection, tracking, counting, and weight estimation.  
+- All files are saved in the `outputs/` folder automatically after the `/analyze_video` API is called.
 
