@@ -48,6 +48,8 @@ pip install -r requirements.txt
 ---
 ##  project structure
 
+
+```
 Bird_Counting_and_Weight_Estimation/
 │
 ├── main.py
@@ -84,4 +86,6 @@ Bird_Counting_and_Weight_Estimation/
     └── input_sample.mp4
         └── Provided CCTV video for testing
 
+
+```
 ---
