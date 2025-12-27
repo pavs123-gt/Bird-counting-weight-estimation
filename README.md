@@ -21,10 +21,20 @@ A **FastAPI service** is provided for easy video analysis through an API.
 
 ---
 
-## ⚙️ Setup & Installation
+#  Setup & Installation
 
-### 1. Clone the Repository
+# Prerequisites
+# - Linux OS
+# - Python 3.8 or higher
+# - pip package manager
 
-```bash
-git clone https://github.com/<your-username>/bird-counting-weight-estimation.git
-cd bird-counting-weight-estimation
+# Create and Activate Virtual Environment (Recommended)
+python3 -m venv venv
+source venv/bin/activate
+
+# Upgrade pip (Optional but Recommended)
+pip install --upgrade pip
+
+# Install Dependencies
+pip install -r requirements.txt
+
