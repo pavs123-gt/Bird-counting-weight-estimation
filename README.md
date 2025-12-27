@@ -257,20 +257,11 @@ The API returns a JSON response containing the following fields:
 - `artifacts`: Names of generated output files (annotated video and JSON)
 
 
-
-
----
-
-### Output Files
-
-All generated artifacts are automatically saved in the `outputs/` directory after video processing is completed.
-
 ---
 ## Outputs
 
 After processing a poultry CCTV video using the system, the following outputs are generated in the `outputs/` directory:
 
----
 
 ### 1. Annotated Video
 
@@ -278,7 +269,7 @@ After processing a poultry CCTV video using the system, the following outputs ar
 - Description: The input video with bounding boxes drawn around detected birds, tracking IDs displayed, and total bird count overlaid on each frame.  
 - Purpose: Provides visual confirmation of detection, tracking, and counting performance.
 
----
+
 
 ### 2. JSON Response File
 
@@ -333,7 +324,7 @@ After processing a poultry CCTV video using the system, the following outputs ar
 }
 ```
 
----
+
 
 ### Notes on Outputs
 
