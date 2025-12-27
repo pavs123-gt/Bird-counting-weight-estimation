@@ -15,7 +15,7 @@ A **FastAPI service** is provided for easy video analysis through an API.
 - [Running the System](#running-the-system)
 - [API Usage](#api-usage)
 - [Outputs](#outputs)
-- [Weight Estimation Notes](#weight-estimation-notes)
+- [Weight Proxy Methodology](#Weight-Proxy-Methodology)
 - [Tools Used](#tools-used)
 - [Author](#author)
 
@@ -136,14 +136,14 @@ Basic example:
 
 ```bash
 curl -X POST http://127.0.0.1:8000/analyze_video \
--F "file=@sample_video.mp4"
+-F "file=@2025_12_15_15_24_16_4_dQCiGf.mp4"
 ```
 
 Example with optional parameters:
 
 ```bash
 curl -X POST "http://127.0.0.1:8000/analyze_video?fps_sample=2&conf_thresh=0.1&iou_thresh=0.7" \
--F "file=@sample_video.mp4"
+-F "file=@2025_12_15_15_24_16_4_dQCiGf.mp4"
 ```
 
 
@@ -237,7 +237,7 @@ curl -X POST http://127.0.0.1:8000/analyze_video \
 **Example with Optional Parameters**
 ```bash
 curl -X POST "http://127.0.0.1:8000/analyze_video?fps_sample=2&conf_thresh=0.1&iou_thresh=0.7" \
--F "file=@sample_video.mp4"
+-F "file=@2025_12_15_15_24_16_4_dQCiGf.mp4"
 ```
 
 
@@ -279,11 +279,11 @@ After processing a poultry CCTV video using the system, the following outputs ar
   "counts": [
     {
       "timestamp": 0.0,
-      "count": 12
+      "count": 5
     },
     {
       "timestamp": 1.0,
-      "count": 14
+      "count": 3
     }
   ],
   "tracks_sample": {
@@ -321,7 +321,7 @@ After processing a poultry CCTV video using the system, the following outputs ar
 
 
 
-### Notes on Outputs
+###  Output Artifacts
 
 - Only one annotated demo video is required for submission.  
 - JSON provides **all counts, tracking IDs, and weight proxies** in a structured format.  
@@ -329,7 +329,7 @@ After processing a poultry CCTV video using the system, the following outputs ar
 - All files are saved in the `outputs/` folder automatically after the `/analyze_video` API is called.
 
 ---
-## Weight Estimation Notes
+## Weight Proxy Methodology
 
 The weight estimation in this project is implemented as a **relative weight index**, derived from the **area of the bounding boxes** detected around each bird.
 
