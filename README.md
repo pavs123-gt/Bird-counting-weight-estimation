@@ -318,6 +318,13 @@ After processing a poultry CCTV video using the system, the following outputs ar
   }
 }
 ```
+## Detection Output Screenshot
+
+The following image shows a sample annotated frame from the video, illustrating the bird detection results produced by the model.  
+Detected birds are highlighted using bounding boxes, demonstrating the effectiveness of the detection and counting process.
+
+![Bird Detection Output]()
+
 ## Sample Output Video
 
 Due to large file size, the annotated video is hosted on Google Drive.
