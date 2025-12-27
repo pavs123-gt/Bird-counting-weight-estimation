@@ -89,3 +89,11 @@ Bird_Counting_and_Weight_Estimation/
 
 ```
 ---
+## Features
+
+- Bird detection and tracking using YOLOv8 with ByteTrack 
+- Accurate bird counting over time with timestamp-based counts
+- Weight estimation using bounding-box area as a proxy
+- Annotated output video with bounding boxes, tracking IDs, and total count overlay
+- FastAPI-based API with configurable parameters (fps_sample, conf_thresh, iou_thresh)
+---
