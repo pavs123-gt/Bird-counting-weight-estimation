@@ -325,7 +325,7 @@ Detected birds are highlighted using bounding boxes, demonstrating the effective
 
 ![Bird Detection Output](https://github.com/pavs123-gt/Bird-counting-weight-estimation/blob/main/bird_detection.png)
 
-## Sample Output Video
+## Annotated Output Video
 
 Due to large file size, the annotated video is hosted on Google Drive.
 
