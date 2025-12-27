@@ -177,7 +177,7 @@ All generated outputs are saved inside the `outputs/` directory.
 
 ---
 
-### 6. Notes
+### 6. Implementation Details
 
 - Bird detection is performed using **YOLOv8**  
 - Tracking is handled using **ByteTrack** with persistent tracking IDs  
