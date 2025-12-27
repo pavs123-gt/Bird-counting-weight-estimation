@@ -46,4 +46,42 @@ pip install -r requirements.txt
 
 ```
 ---
+##  project structure
 
+Bird_Counting_and_Weight_Estimation/
+│
+├── main.py
+│   └── FastAPI application
+│       - /health endpoint
+│       - /analyze_video endpoint
+│       - YOLO detection + tracking
+│       - Bird counting & weight index logic
+│
+├── results/
+│   ├── annotated_<video_id>.avi
+│   │   └── Annotated output video
+│   │       (bounding boxes, tracking IDs, count overlay)
+│   │
+│   ├── results_<video_id>.json
+│   │   └── API output JSON
+│   │       - counts over time
+│   │       - sample tracks
+│   │       - weight proxy/index
+│   │
+│   └── temp_<video_id>.mp4
+│       └── Temporary uploaded video (auto-deleted)
+│
+├── models/
+│   └── yolov8n.pt
+│       └── Pretrained YOLOv8 model (COCO)
+│
+├── requirements.txt
+│   └── Python dependencies
+│       (fastapi, uvicorn, ultralytics, opencv-python, etc.)
+│
+│
+└── sample_videos/   
+    └── input_sample.mp4
+        └── Provided CCTV video for testing
+
+---
