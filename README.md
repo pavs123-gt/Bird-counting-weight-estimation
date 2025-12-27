@@ -33,11 +33,11 @@ A **FastAPI service** is provided for easy video analysis through an API.
 ```bash
 python3 -m venv venv
 source venv/bin/activate
-,,,
 
-### Upgrade pip
+### Upgrade pip (Optional but Recommended)
+
 ```bash
 pip install --upgrade pip
-,,,
+
 
 
