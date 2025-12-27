@@ -97,3 +97,74 @@ Bird_Counting_and_Weight_Estimation/
 - Annotated output video with bounding boxes, tracking IDs, and total count overlay
 - FastAPI-based API with configurable parameters (fps_sample, conf_thresh, iou_thresh)
 ---
+
+## Running the System
+
+Follow the steps below to run the Bird Counting and Weight Estimation system locally.
+
+1. Activate Virtual Environment (Optional but Recommended)
+
+Activate the Python virtual environment before running the application.
+
+Command:
+source venv/bin/activate
+
+--------------------------------------------------
+
+2. Start the FastAPI Server
+
+Run the FastAPI application using Uvicorn.
+
+Command:
+uvicorn app:app --reload
+
+If the server starts successfully, you will see output similar to:
+Uvicorn running on http://127.0.0.1:8000
+
+--------------------------------------------------
+
+3. Verify Service Health
+
+Check whether the API is running correctly using the health endpoint.
+
+Command:
+curl http://127.0.0.1:8000/health
+
+Expected response:
+{
+  "status": "OK"
+}
+
+--------------------------------------------------
+
+4. Analyze a Video
+
+Send a POST request to the /analyze_video endpoint with a poultry CCTV video file.
+
+Basic example:
+curl -X POST http://127.0.0.1:8000/analyze_video -F "file=@sample_video.mp4"
+
+Example with optional parameters:
+curl -X POST "http://127.0.0.1:8000/analyze_video?fps_sample=2&conf_thresh=0.1&iou_thresh=0.7" -F "file=@sample_video.mp4"
+
+--------------------------------------------------
+
+5. Output Generation
+
+After processing is completed, the system automatically generates the following outputs:
+
+- An annotated output video with bounding boxes, tracking IDs, and bird count overlay
+- A JSON file containing bird counts over time, sample tracking data, and weight estimation values
+
+All generated outputs are saved inside the outputs/ directory.
+
+--------------------------------------------------
+
+6. Notes
+
+- Bird detection is performed using YOLOv8.
+- Tracking is handled using ByteTrack with persistent tracking IDs.
+- Bird count is calculated based on active tracking IDs per frame.
+- Weight estimation is provided as a relative index derived from bounding box area.
+- FPS sampling can be adjusted to balance accuracy and processing speed.
+
