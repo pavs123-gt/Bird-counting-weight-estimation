@@ -318,7 +318,12 @@ After processing a poultry CCTV video using the system, the following outputs ar
   }
 }
 ```
+## Sample Output Video
 
+Due to large file size, the annotated video is hosted on Google Drive.
+
+🔗 **Download Link:**  
+https://drive.google.com/file/d/1R1Byn37eS-YrnmQwJqkK-UXAfMkmpCTM/view?usp=sharing
 
 
 ###  Output Artifacts
