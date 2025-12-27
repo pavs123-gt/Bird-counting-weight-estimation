@@ -67,13 +67,8 @@ Bird_Counting_and_Weight_Estimation/
 │
 ├── requirements.txt
 │
-└── sample_videos/
-    └── input_sample.mp4
-
-
-
-
-
+└── videos/
+    └── 2025_12_15_15_24_16_4_dQCiGf.MP4(Given)
 ```
 ---
 ## Features
