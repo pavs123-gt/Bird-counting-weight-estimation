@@ -23,21 +23,29 @@ A **FastAPI service** is provided for easy video analysis through an API.
 
 ##  Setup & Installation
 
-### Prerequisites
+## Prerequisites
 - Linux OS
 - Python 3.8 or higher
 - pip package manager
-
-### Create and Activate Virtual Environment 
+- 
+### Create and Activate Virtual Environment
+Create a virtual environment and activate it:
 
 ```bash
 python3 -m venv venv
 source venv/bin/activate
----
-### Upgrade pip (Optional but Recommended)
+```
 
+
+## Install Montreal Forced Aligner
 ```bash
-pip install --upgrade pip
----
+pip install montreal-forced-aligner
+```
+## Verfiy Installation
+```bash
+mfa version
+mfa align --help
+```
 
+---
 
