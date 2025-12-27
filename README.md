@@ -84,7 +84,7 @@ Bird_Counting_and_Weight_Estimation/
 
 Follow the steps below to run the Bird Counting and Weight Estimation system locally.
 
-### 1. Activate Virtual Environment (Optional but Recommended)
+### 1. Activate Virtual Environment 
 
 Activate the Python virtual environment before running the application.
 
