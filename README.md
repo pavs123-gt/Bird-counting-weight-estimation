@@ -184,5 +184,123 @@ All generated outputs are saved inside the `outputs/` directory.
 - Weight estimation is provided as a **relative index** derived from bounding box area  
 - FPS sampling can be adjusted to balance accuracy and processing speed
 
+---
+## API Usage
+
+The system exposes a minimal FastAPI service to analyze poultry CCTV videos for bird counting and weight estimation.
+
+---
+
+### Base URL
+
+```
+http://127.0.0.1:8000
+```
+
+---
+
+### 1. Health Check Endpoint
+
+Used to verify whether the API service is running.
+
+**Endpoint**
+```
+GET /health
+```
+
+**Example Request**
+```bash
+curl http://127.0.0.1:8000/health
+```
+
+**Example Response**
+```json
+{
+  "status": "OK"
+}
+```
+
+---
+
+### 2. Analyze Video Endpoint
+
+Processes a poultry CCTV video and returns bird counts over time, tracking samples, weight estimation data, and generated artifacts.
+
+**Endpoint**
+```
+POST /analyze_video
+```
+
+**Request Type**
+```
+multipart/form-data
+```
+
+**Required Parameter**
+- `file` : Input poultry CCTV video file
+
+**Optional Query Parameters**
+- `fps_sample` (int): Process every Nth frame (default = 1)
+- `conf_thresh` (float): Detection confidence threshold (default = 0.05)
+- `iou_thresh` (float): IoU threshold for tracking (default = 0.7)
+
+---
+
+**Basic Example**
+```bash
+curl -X POST http://127.0.0.1:8000/analyze_video \
+-F "file=@sample_video.mp4"
+```
+
+---
+
+**Example with Optional Parameters**
+```bash
+curl -X POST "http://127.0.0.1:8000/analyze_video?fps_sample=2&conf_thresh=0.1&iou_thresh=0.7" \
+-F "file=@sample_video.mp4"
+```
+
+---
+
+### Response Structure
+
+The API returns a JSON response containing the following fields:
+
+- `counts`: Time series of bird counts (timestamp → count)
+- `tracks_sample`: Sample tracking IDs with representative bounding boxes
+- `weight_estimates`: Relative weight index per bird with method details
+- `artifacts`: Names of generated output files (annotated video and JSON)
+
+**Sample Response**
+```json
+{
+  "counts": [
+    {
+      "timestamp": 0.0,
+      "count": 12
+    }
+  ],
+  "tracks_sample": {
+    "3": {
+      "bbox": [120, 85, 260, 210],
+      "confidence": 0.87
+    }
+  },
+  "weight_estimates": {
+    "unit": "index",
+    "method": "bounding_box_area_proxy"
+  },
+  "artifacts": {
+    "annotated_video": "annotated_<id>.avi",
+    "json": "results_<id>.json"
+  }
+}
+```
+
+---
+
+### Output Files
+
+All generated artifacts are automatically saved in the `outputs/` directory after video processing is completed.
 
 
