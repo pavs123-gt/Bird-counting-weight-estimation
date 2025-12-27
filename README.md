@@ -175,7 +175,7 @@ After processing is completed, the system automatically generates the following 
 
 The system exposes a minimal FastAPI service to analyze poultry CCTV videos for bird counting and weight estimation.
 
----
+
 
 ### Base URL
 
@@ -183,7 +183,6 @@ The system exposes a minimal FastAPI service to analyze poultry CCTV videos for 
 http://127.0.0.1:8000
 ```
 
----
 
 ### 1. Health Check Endpoint
 
@@ -238,7 +237,7 @@ curl -X POST http://127.0.0.1:8000/analyze_video \
 -F "file=@sample_video.mp4"
 ```
 
----
+
 
 **Example with Optional Parameters**
 ```bash
@@ -246,7 +245,7 @@ curl -X POST "http://127.0.0.1:8000/analyze_video?fps_sample=2&conf_thresh=0.1&i
 -F "file=@sample_video.mp4"
 ```
 
----
+
 
 ### Response Structure
 
