@@ -110,7 +110,7 @@ Activate the Python virtual environment before running the application.
 source venv/bin/activate
 ```
 
----
+
 
 ### 2. Start the FastAPI Server
 
@@ -126,7 +126,7 @@ If the server starts successfully, you will see output similar to:
 Uvicorn running on http://127.0.0.1:8000
 ```
 
----
+
 
 ### 3. Verify Service Health
 
@@ -144,7 +144,7 @@ Expected response:
 }
 ```
 
----
+
 
 ### 4. Analyze a Video
 
@@ -164,7 +164,6 @@ curl -X POST "http://127.0.0.1:8000/analyze_video?fps_sample=2&conf_thresh=0.1&i
 -F "file=@sample_video.mp4"
 ```
 
----
 
 ### 5. Output Generation
 
@@ -175,7 +174,7 @@ After processing is completed, the system automatically generates the following 
 
 All generated outputs are saved inside the `outputs/` directory.
 
----
+
 
 ### 6. Implementation Details
 
