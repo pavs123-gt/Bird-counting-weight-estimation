@@ -28,10 +28,14 @@ A **FastAPI service** is provided for easy video analysis through an API.
 - Python 3.8 or higher
 - pip package manager
 
-### Create and Activate Virtual Environment (Recommended)
+### Create and Activate Virtual Environment 
 
 ```bash
 python3 -m venv venv
 source venv/bin/activate
+
+### Upgrade pip
+```bash
+pip install --upgrade pip
 
 
