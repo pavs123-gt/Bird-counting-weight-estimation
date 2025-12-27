@@ -159,7 +159,6 @@ After processing is completed, the system automatically generates the following 
 - An annotated output video with bounding boxes, tracking IDs, and bird count overlay  
 - A JSON file containing bird counts over time, sample tracking data, and weight estimation values  
 
-All generated outputs are saved inside the `outputs/` directory.
 
 
 
