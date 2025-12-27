@@ -257,31 +257,8 @@ The API returns a JSON response containing the following fields:
 - `weight_estimates`: Relative weight index per bird with method details
 - `artifacts`: Names of generated output files (annotated video and JSON)
 
-**Sample Response**
-```json
-{
-  "counts": [
-    {
-      "timestamp": 0.0,
-      "count": 12
-    }
-  ],
-  "tracks_sample": {
-    "3": {
-      "bbox": [120, 85, 260, 210],
-      "confidence": 0.87
-    }
-  },
-  "weight_estimates": {
-    "unit": "index",
-    "method": "bounding_box_area_proxy"
-  },
-  "artifacts": {
-    "annotated_video": "annotated_<id>.avi",
-    "json": "results_<id>.json"
-  }
-}
-```
+
+
 
 ---
 
